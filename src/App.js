@@ -1,4 +1,3 @@
-import { SiTailwindcss } from "react-icons/si";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import About from "./Components/pages/About";
@@ -22,7 +21,7 @@ const App = () => {
 					<Route path="/about">
 						<About />
 					</Route>
-					<Route path="/projects">
+					<Route path="/projects/:projectId">
 						<Projects />
 					</Route>
 					<Route path="/achievements">

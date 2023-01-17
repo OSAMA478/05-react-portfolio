@@ -18,7 +18,7 @@ const Home = () => {
 				<div className="flex flex-col justify-center w-8 h-64 ">
 					<a
 						href="https://www.linkedin.com/in/osama-shaikh-790b6a118"
-						className={`${centerWithFlex} border-2 border-b-0 aspect-square`}
+						className={`${centerWithFlex} border-2 border-b-0 aspect-square hover:bg-slate-200 hover:bg-opacity-30`}
 					>
 						<div className={`${centerWithFlex} w-3/4 h-3/4`}>
 							<FaLinkedin className="w-full h-full" />
@@ -26,7 +26,7 @@ const Home = () => {
 					</a>
 					<a
 						href="https://github.com/OSAMA478"
-						className={`${centerWithFlex} border-2 border-b-0 aspect-square`}
+						className={`${centerWithFlex} border-2 border-b-0 aspect-square hover:bg-slate-200 hover:bg-opacity-30`}
 					>
 						<div className={`${centerWithFlex} w-3/4 h-3/4`}>
 							<BsGithub className="w-full h-full" />
@@ -34,7 +34,7 @@ const Home = () => {
 					</a>
 					<a
 						href="mailto:shaikhosama478@gmail.com"
-						className={`${centerWithFlex} border-2 aspect-square`}
+						className={`${centerWithFlex} border-2 aspect-square hover:bg-slate-200 hover:bg-opacity-30`}
 					>
 						<div className={`${centerWithFlex} w-3/4 h-3/4`}>
 							<MdOutgoingMail className="w-full h-full" />
