@@ -1,9 +1,9 @@
 import React from "react";
-import { NavLink, Route } from "react-router-dom";
+import { Link, NavLink, Route } from "react-router-dom";
 import profilePicPath from "../img/profile.png";
 const Navbar = () => {
 	return (
-		<nav className="flex items-center justify-between h-12 bg-slate-500">
+		<nav className="flex items-center justify-between h-12 ">
 			<Route to="/home">
 				<div className="flex items-center justify-between w-48 h-full aspect-square ">
 					<div className="relative mx-2 overflow-hidden rounded-full h-4/5 aspect-square">
@@ -17,32 +17,29 @@ const Navbar = () => {
 				</div>
 			</Route>
 			<ul className="flex ">
-				<li className="mx-2 font-bold">
-					<NavLink activeClassName="text-slate-200 underline" to="/home">
+				<li className="mx-2 text-xs font-bold">
+					<NavLink activeClassName="text-sky-500 underline" to="/home">
 						Home
 					</NavLink>
 				</li>
 
-				<li className="mx-2 font-bold">
-					<NavLink activeClassName="text-slate-200 underline" to="/about">
+				<li className="mx-2 text-xs font-bold">
+					<NavLink activeClassName="text-sky-500 underline" to="/about">
 						About
 					</NavLink>
 				</li>
-				<li className="mx-2 font-bold">
-					<NavLink activeClassName="text-slate-200 underline" to="/projects">
+				<li className="mx-2 text-xs font-bold">
+					<NavLink activeClassName="text-sky-500 underline" to="/projects">
 						Projects
 					</NavLink>
 				</li>
-				<li className="mx-2 font-bold">
-					<NavLink
-						activeClassName="text-slate-200 underline"
-						to="/achievements"
-					>
+				<li className="mx-2 text-xs font-bold">
+					<NavLink activeClassName="text-sky-500 underline" to="/achievements">
 						Achievements
 					</NavLink>
 				</li>
-				<li className="mx-2 font-bold">
-					<NavLink activeClassName="text-slate-200 underline" to="/contact">
+				<li className="mx-2 text-xs font-bold">
+					<NavLink activeClassName="text-sky-500 underline" to="/contact">
 						Contact
 					</NavLink>
 				</li>
