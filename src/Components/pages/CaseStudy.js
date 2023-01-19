@@ -1,10 +1,12 @@
-import React, { Fragment } from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { Fragment, useContext } from "react";
+import { useParams } from "react-router-dom";
+import ProjectContext from "../../Store/create-context";
 import Card from "../UI/Card";
 
-const CaseStudy = (props) => {
+const CaseStudy = () => {
 	const { projectId } = useParams();
-	const projectData = props.projectData[projectId];
+	const projectDataCtx = useContext(ProjectContext);
+	const projectData = projectDataCtx[projectId];
 	return (
 		<Fragment>
 			<div className={`h-[calc(100vh-3rem)] flex justify-center items-center`}>

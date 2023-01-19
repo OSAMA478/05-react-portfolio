@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import ProjectContext from "../../Store/create-context";
 
 import Card from "../UI/Card";
 
-const Projects = (props) => {
+const Projects = () => {
 	const [projectId, setProjectId] = useState("project1");
+
+	const projectDataCtx = useContext(ProjectContext);
 
 	const centeredWithFlex = "flex items-center justify-center";
 	return (
@@ -30,7 +33,7 @@ const Projects = (props) => {
 							>
 								<img
 									className="h-full"
-									src={props.projectData[projectId].projectImgPath}
+									src={projectDataCtx[projectId].projectImgPath}
 									alt="project screenshot"
 								/>
 							</div>
@@ -39,7 +42,7 @@ const Projects = (props) => {
 				</div>
 				<div className={`${centeredWithFlex} w-1/2 p-4 flex-col`}>
 					<ul className="[&>*]:text-xs">
-						{Object.keys(props.projectData).map((projectId) => {
+						{Object.keys(projectDataCtx).map((projectId) => {
 							return (
 								<li
 									className="cursor-pointer"
@@ -48,7 +51,7 @@ const Projects = (props) => {
 									}}
 									key={projectId}
 								>
-									{props.projectData[projectId].projectName}
+									{projectDataCtx[projectId].projectName}
 								</li>
 							);
 						})}
@@ -57,7 +60,7 @@ const Projects = (props) => {
 			</div>
 			<div className={`${centeredWithFlex}`}>
 				<h1 className={`${centeredWithFlex} w-1/2`}>
-					{props.projectData[projectId].projectName}
+					{projectDataCtx[projectId].projectName}
 				</h1>
 
 				<div className={`${centeredWithFlex} w-1/2`}>
