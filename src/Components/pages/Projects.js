@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useRouteMatch } from "react-router-dom";
 
 import project1Path from "../../ProjectImages/project1.png";
 import project2Path from "../../ProjectImages/project2.png";
@@ -13,7 +13,7 @@ import project9Path from "../../ProjectImages/project9.png";
 
 import Card from "../UI/Card";
 
-const Projects = (props) => {
+const Projects = () => {
 	const [projectId, setProjectId] = useState("project1");
 
 	const projectData = {
@@ -110,12 +110,7 @@ const Projects = (props) => {
 				</h1>
 
 				<div className={`${centeredWithFlex} w-1/2`}>
-					<Link
-						onClick={() => {
-							props.onCaseClick(projectId);
-						}}
-						to={`/projects/${projectId}/caseStudy`}
-					>
+					<Link to={`/projects/${projectId}/case-study`}>
 						<Card className="p-2 text-center rounded-lg bg-sky-500 ">
 							CASE STUDY
 						</Card>
