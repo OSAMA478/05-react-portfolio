@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import project1Path from "../../ProjectImages/project1.png";
 import project2Path from "../../ProjectImages/project2.png";
@@ -15,16 +15,6 @@ import Card from "../UI/Card";
 
 const Projects = (props) => {
 	const [projectId, setProjectId] = useState("project1");
-
-	const project1el = useRef();
-	const project2el = useRef();
-	const project3el = useRef();
-	const project4el = useRef();
-	const project5el = useRef();
-	const project6el = useRef();
-	const project7el = useRef();
-	const project8el = useRef();
-	const project9el = useRef();
 
 	const projectData = {
 		project1: {
@@ -64,11 +54,6 @@ const Projects = (props) => {
 			projectImgPath: project9Path,
 		},
 	};
-	// const projectIds = [];
-	// for (const id in projectData) {
-	// 	projectIds.push(id);
-	// }
-	// console.log(projectIds);
 
 	const centeredWithFlex = "flex items-center justify-center";
 	return (
@@ -76,7 +61,6 @@ const Projects = (props) => {
 			<h1 className="text-xl font-bold text-center ">PROJECTS</h1>
 			<div className={` flex  `}>
 				<div className={`${centeredWithFlex} relative w-1/2 p-4`}>
-					{/* <img src={laptopImgPath} alt="laptop frame scale-80" /> */}
 					<div className="w-11/12 mx-auto overflow-hidden text-center rounded-lg lg:w-9/12">
 						<div className="w-full">
 							<div className="shadow-2xl">
@@ -104,104 +88,19 @@ const Projects = (props) => {
 				</div>
 				<div className={`${centeredWithFlex} w-1/2 p-4 flex-col`}>
 					<ul className="[&>*]:text-xs">
-						<li
-							className="cursor-pointer"
-							onClick={() => {
-								setProjectId(project1el.current.id);
-							}}
-							ref={project1el}
-							id="project1"
-						>
-							first
-						</li>
-
-						<li
-							className="cursor-pointer"
-							onClick={() => {
-								setProjectId(project2el.current.id);
-							}}
-							ref={project2el}
-							id="project2"
-						>
-							second
-						</li>
-
-						<li
-							className="cursor-pointer"
-							onClick={() => {
-								setProjectId(project3el.current.id);
-							}}
-							ref={project3el}
-							id="project3"
-						>
-							third
-						</li>
-
-						<li
-							className="cursor-pointer"
-							onClick={() => {
-								setProjectId(project4el.current.id);
-							}}
-							ref={project4el}
-							id="project4"
-						>
-							fourth
-						</li>
-
-						<li
-							className="cursor-pointer"
-							onClick={() => {
-								setProjectId(project5el.current.id);
-							}}
-							ref={project5el}
-							id="project5"
-						>
-							five
-						</li>
-
-						<li
-							className="cursor-pointer"
-							onClick={() => {
-								setProjectId(project6el.current.id);
-							}}
-							ref={project6el}
-							id="project6"
-						>
-							six
-						</li>
-
-						<li
-							className="cursor-pointer"
-							onClick={() => {
-								setProjectId(project7el.current.id);
-							}}
-							ref={project7el}
-							id="project7"
-						>
-							seven
-						</li>
-
-						<li
-							className="cursor-pointer"
-							onClick={() => {
-								setProjectId(project8el.current.id);
-							}}
-							ref={project8el}
-							id="project8"
-						>
-							eight
-						</li>
-
-						<li
-							className="cursor-pointer"
-							onClick={() => {
-								setProjectId(project9el.current.id);
-							}}
-							ref={project9el}
-							id="project9"
-						>
-							nine
-						</li>
+						{Object.keys(projectData).map((projectId) => {
+							return (
+								<li
+									className="cursor-pointer"
+									onClick={() => {
+										setProjectId(projectId);
+									}}
+									key={projectId}
+								>
+									{projectData[projectId].projectName}
+								</li>
+							);
+						})}
 					</ul>
 				</div>
 			</div>
@@ -223,12 +122,6 @@ const Projects = (props) => {
 					</Link>
 				</div>
 			</div>
-			<Switch>
-				{/* <Route path={`/projects/${projectId}/caseStudy`}>
-					
-					<h1>this is case study for {projectId}</h1>
-				</Route> */}
-			</Switch>
 		</div>
 	);
 };
