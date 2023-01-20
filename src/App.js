@@ -24,7 +24,7 @@ const App = () => {
 			<main className="h-[clac(100vh-3rem)] bg-slate-200 mt-12 ">
 				<Suspense
 					fallback={
-						<div className="flex items-center justify-center w-screen h-screen bg-black">
+						<div className="flex items-center justify-center w-screen h-screen">
 							<LoadingSpinner />
 						</div>
 					}

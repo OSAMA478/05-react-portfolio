@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Route } from "react-router-dom";
-import profilePicPath from "../img/profile.png";
+import profilePicPath from "../img/profile.jpg";
 const Navbar = () => {
 	return (
 		<nav className="fixed top-0 z-10 flex items-center justify-between w-full h-12 bg-white">

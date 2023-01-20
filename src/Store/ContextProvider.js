@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectContext from "./create-context";
 
-import project1Path from "../ProjectImages/project1.png";
+import project1Path from "../ProjectImages/project1.jpg";
 import project2Path from "../ProjectImages/project2.png";
 import project3Path from "../ProjectImages/project3.png";
 import project4Path from "../ProjectImages/project4.png";
